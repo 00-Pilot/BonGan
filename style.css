@@ -1,0 +1,460 @@
+* {
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  background-color: black;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: fixed; /*  sabit pozisyon */
+  top: 0; /* sayfanın en üstüne */
+  left: 0; /* sola yapışık */
+  width: 100%; /* tam genişlik */
+  z-index: 1000; /* diğer şeylerin üstünde */
+  padding: 0 20px;
+}
+.seo{
+    color: white;
+    font-size: larger;
+}
+.seo h1{
+    font-size: 28px;
+}
+/* Tüm linkler */
+.navbar ul a {
+  font-family: "Roboto Mono", monospace;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0 15px;
+  transition: all 0.3s ease; /* animasyon için */
+}
+
+/* Hover efekti */
+.navbar ul a:hover {
+  color: #ba55d3;
+}
+/* Aktif link */
+.navbar ul a.active {
+  font-size: 1.1rem; /* biraz büyüt */
+  border-bottom: 4px solid purple; /* altına ince şerit */
+  color: #ba55d3; /* isteğe bağlı renklendirme */
+}
+
+/* Logo */
+.logo img {
+  height: 70px; /* nav bar yüksekliğine uygun */
+  display: block;
+}
+
+/* Menü */
+.menu {
+  list-style: none; /* noktaları kaldır */
+  display: flex; /* yan yana diz */
+  gap: 30px; /* öğeler arası boşluk */
+  position: absolute; /* nav bar ortasında */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Menü linkleri */
+.menu a {
+  text-decoration: none; /* alt çizgi kaldır */
+  color: white; /* yazı beyaz */
+  font-weight: bold;
+  display: flex; /* dikey ortalama için */
+  align-items: center; /* dikey ortala */
+  height: 60px; /* nav bar yüksekliği ile eşleşir */
+  padding: 0 10px; /* tıklanabilir alan */
+}
+
+/* Hover efekti */
+.menu a:hover {
+  color: #ba55d3;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  height: 1000vh;
+}
+
+.menu-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 30px;
+  padding: 10px;
+  height: 60px;
+  z-index: 999;
+  border: 4px solid purple;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #b400b4; /* Mor tonu */
+}
+
+.hidden-icons {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width 0.4s ease;
+}
+
+.menu-container:hover .hidden-icons {
+  max-width: 400px;
+}
+
+.hidden-icons .icon {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+  pointer-events: auto;
+}
+
+.menu-container:hover .hidden-icons .icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden-icons .icon:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.hidden-icons .icon:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.hidden-icons .icon:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.hidden-icons .icon:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.arrow {
+  font-size: 28px;
+  margin-left: 5px;
+  font-weight: 700;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+  color: purple;
+}
+
+.menu-container:hover .arrow {
+  opacity: 0;
+  transform: translateX(10px);
+}
+.icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.icon:hover svg {
+  transform: scale(1.2);
+  fill: purple;
+}
+
+/* Gizli ikonların ilk hali */
+.hidden-icons .icon {
+  opacity: 0;
+  transform: translateX(20px) scale(1); /* scale ekledik */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hover sırasında aktif olan hali */
+.menu-container:hover .hidden-icons .icon {
+  opacity: 1;
+  transform: translateX(0) scale(1); /* scale sabit */
+}
+
+/* Hover sırasında büyüme efekti */
+.menu-container:hover .hidden-icons .icon:hover svg {
+  transform: scale(1.3); /* Sadece scale uygulanır */
+  fill: purple;
+}
+body {
+  background-color: #1e1e1e;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 130px 30px;
+  gap: 30px;
+}
+.banner {
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* Sol banner */
+.banner.left {
+  width: 300px; /* genişlik artırıldı */
+  height: 408px;
+}
+.banner.left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+/* Sağ banner (dikey ads) */
+.banner.right {
+  width: 300px; /* genişlik artırıldı */
+  height: 408px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Orta alan */
+.middle-area {
+  flex-grow: 1;
+  max-width: 1000px; /* genişlik 1000px yapıldı */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Slider container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+.slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black;
+  display: block;
+}
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 22px;
+  max-width: 70%;
+  user-select: none;
+}
+.arrow1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.dot.active {
+  background: white;
+}
+
+/* Yatay bannerlar (orta) */
+.horizontal-banner {
+  width: 100%;
+  height: 90px;
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Mobil uyumluluk ve küçültmeler --- */
+
+@media (max-width: 768px) {
+  /* Container dikey, ortalı */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
+    gap: 20px;
+  }
+
+  /* Bannerlar yüksekliği artırıldı */
+  .banner.left,
+  .banner.right {
+    width: 90vw;
+    max-width: 300px;
+    height: 150px; /* 100px’den 150px’e çıkarıldı */
+  }
+  .banner.left img {
+    height: 150px; /* Banner içi görsel yüksekliği */
+  }
+
+  /* Slider yüksekliği artırıldı */
+  .slider-container {
+    height: 180px; /* 100px’den 180px’e çıkarıldı */
+  }
+  .slide img {
+    height: 180px; /* Slider görselleri için */
+  }
+
+  /* Navbar */
+  .navbar {
+    height: 50px;
+    padding: 0 15px;
+    justify-content: center;
+  }
+
+  /* Menü (navbar içindeki) */
+  .menu {
+    position: static;
+    transform: none;
+    gap: 15px;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  /* Navbar linkleri */
+  .navbar ul a,
+  .menu a {
+    height: 40px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  /* Menü konteyner mobilde biraz küçülür */
+  .menu-container {
+    height: 50px;
+    padding: 8px;
+    border-width: 3px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 3px;
+  }
+  .arrow {
+    font-size: 22px;
+    margin-left: 3px;
+  }
+
+  /* Yatay bannerlar küçültüldü */
+  .horizontal-banner {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar linklerini daha küçük ve sıkışık yap */
+  .navbar ul a,
+  .menu a {
+    font-size: 0.8rem;
+    padding: 0 6px;
+    height: 35px;
+  }
+
+  /* Container içeriği iyice daralt */
+  .container {
+    margin: 10px 5px;
+  }
+
+  /* Bannerlar %100 genişlik, max 280px, yüksekliği artırıldı */
+  .banner.left,
+  .banner.right {
+    width: 100vw;
+    max-width: 280px;
+    height: 250px; 
+  }
+  .banner.left img {
+    height: 250px;
+  }
+
+  /* Slider yüksekliği artırıldı */
+  .slider-container {
+    height: 180px; 
+  }
+  .slide img {
+    height: 180px; /* Slider görselleri için */
+  }
+
+  /* Menü ikonları daha küçük */
+  .icon {
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+  }
+
+  /* Font daha küçük */
+  body, .slide-text {
+    font-size: 12px;
+  }
+}
